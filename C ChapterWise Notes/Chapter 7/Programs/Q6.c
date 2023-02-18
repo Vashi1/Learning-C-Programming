@@ -1,36 +1,18 @@
-//
-// Created by romeo on 17/2/23.
+//To count the number of positive integers in an array
+// Created by romeo on 18/2/23.
 //
 #include <stdio.h>
-
-void display(int num[3][10]){
-    int b = 0;
-    while (b < 3){
-        for (int a = 0; a < 11; a++){
-            printf("%d", num[b][a]);
+int counter(int n[]){
+    int c = 0;
+    for (int a = 0; a < 5; a++){
+        if (n[a] >= 0){
+            c++;
         }
-        b++;
-        printf("\n");
     }
+    return c;
 }
 int main(){
-    int num[3][10];
-    int a = 0;
-    int b = 0;
-    for (int c = 1; c < 11; c++){
-        num[a][b] = 2 * c;
-        b++;
-    }
-    a++;
-    int d = 0;
-    for (int c = 1; c < 11; c++){
-        num[a][d] = 7 * c;
-        d++;
-    }
-    int e = 0;
-    for (int c = 1; c < 11; c++){
-        num[a][e] = 9 * c;
-        e++;
-    }
-    display(num);
+    int num[5] = {-1, 2, 3, -9, 2};
+    int f = counter(num);
+    printf("The number of positive integers is %d", f);
 }
